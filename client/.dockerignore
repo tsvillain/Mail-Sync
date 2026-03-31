@@ -1,0 +1,31 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+# Installed fresh inside the image by the deps stage.
+node_modules/
+
+# ── Build output ──────────────────────────────────────────────────────────────
+# Excluded so the builder stage always starts clean. The .next directory is
+# produced inside the container during `npm run build`.
+.next/
+out/
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+# Runtime env vars are injected via docker-compose environment / env_file.
+# Never embed secrets inside the image.
+.env
+.env.*
+*.local
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+logs/
+
+# ── OS & editor artefacts ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Docker files ──────────────────────────────────────────────────────────────
+Dockerfile
+.dockerignore

@@ -1,0 +1,28 @@
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Node modules (all workspaces)
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Next.js build output
+client/.next/
+client/out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives and attachments
+*.zip
+attachments/
+
+# Lock files (keep package-lock.json, not bun.lock)
+bun.lock

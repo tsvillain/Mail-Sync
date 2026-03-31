@@ -1,0 +1,25 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+# Excluded because the Dockerfile installs them fresh inside the image.
+node_modules/
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+# Never bake secrets into the image — pass them at runtime via docker-compose
+# env_file or environment sections.
+.env
+.env.*
+*.local
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+logs/
+
+# ── OS & editor artefacts ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Docker files (not needed inside the image itself) ────────────────────────
+Dockerfile
+.dockerignore

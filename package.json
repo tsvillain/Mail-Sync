@@ -1,0 +1,29 @@
+{
+  "name": "gmail-multi-account-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gmail multi-account sync (server + client)",
+  "author": {
+    "name": "gadgetvala (Suraj Verma)",
+    "email": "surajj.verma7@gmail.com",
+    "url": "https://gadgetvala.github.io"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "license": "ISC",
+  "engines": {
+    "npm": ">=11.7.0",
+    "node": ">=24.10.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n \"server,client\" -c \"cyan,magenta\" --kill-others-on-fail \"cd server && bun run dev\" \"cd client && bun run dev\"",
+    "build": "cd client && bun run build",
+    "start": "concurrently -n \"server,client\" -c \"cyan,magenta\" \"cd server && bun run start\" \"cd client && bun run start\"",
+    "install:all": "bun install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

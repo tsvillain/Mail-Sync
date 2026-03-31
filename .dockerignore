@@ -1,0 +1,32 @@
+# ── Secrets — never bake into the image ───────────────────────────────────────
+.env
+.env.*
+*.local
+
+# ── Dependencies — installed fresh inside the image ───────────────────────────
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# ── Build output ───────────────────────────────────────────────────────────────
+client/.next/
+client/out/
+
+# ── Git ────────────────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+
+# ── OS & editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+
+# ── Attachments (runtime data, not part of the image) ─────────────────────────
+attachments/
